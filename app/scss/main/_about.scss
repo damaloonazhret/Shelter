@@ -1,0 +1,94 @@
+.about {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 437px);
+    height: 588px;
+    justify-content: center;
+    transition: 1s;
+    @include respond-to(tablet) {
+      transition: 1s;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      height: 1048px;
+      justify-items: center;
+    }
+    @include respond-to(help-and-our){
+      height: 975px;
+    }
+  }
+
+  &-pets {
+    background-image: url(../assets/about/catAndDog.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 9% 45%;
+    transition: 1s;
+    @include respond-to(tablet) {
+      transition: 1s;
+      grid-row: 2 / 3;
+      background-size: 42%;
+      background-position: 50% 16%;
+      max-width: 90%;
+    }
+    @include respond-to(tablet-accuracy) {
+      max-width: 100%;
+    }
+    @include respond-to(help-and-our){
+      background-size: 86%;
+      background-position: 50% 44%;
+      max-width: 60vw;
+    }
+    @include respond-to(320px){
+      max-width: 100%;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-rows: 90px 96px 144px;
+    row-gap: 25px;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-left: -6px;
+    @include respond-to(tablet){
+      margin-bottom: -19px;
+      margin-left: 0px;
+      padding: 0 80px;
+    }
+    @include respond-to(help-and-our){
+      padding: 0 15px;
+      grid-template-rows: 64px 140px 247px;
+      margin-bottom: 0px;
+      margin-top: 44px;
+    }
+  }
+
+  &-content-head {
+    @include h3();
+    width: 370px;
+    @include respond-to(help-and-our){
+      width: 100%;
+      font-size: 25px;
+      text-align: center;
+    }
+  }
+
+  &-content-subhead {
+    @include paragraph();
+    color: #4c4c4c;
+    width: 430px;
+    @include respond-to(tablet) {
+      width: 100%;
+      max-width: 600px;
+    }
+    @include respond-to(tablet-accuracy) {
+      width: 430px;
+      max-width: 430px;
+    }
+    @include respond-to(help-and-our){
+      width: 100%;
+      text-align: justify;
+    }
+  }
+}

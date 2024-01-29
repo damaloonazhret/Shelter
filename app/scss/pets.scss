@@ -1,0 +1,34 @@
+@import "helpers/global";
+@import "helpers/mixin";
+@import "helpers/reset";
+@import "common/header";
+@import "common/footer";
+@import "main/slider";
+@import "main/popup";
+
+.inactive {
+  pointer-events: none;
+  //border: 2px solid #CDCDCD;
+}
+
+//a:hover {
+//  color: transparent;
+//  background-color: transparent;
+//  //pointer-events: none;
+//}
+//button:hover {
+//  color: transparent;
+//  background-color: transparent;
+//  //pointer-events: none;
+//}
+//
+//@media (hover: hover) {
+//  a:hover {
+//    color: black;
+//    background-color: black;
+//  }
+//  button:hover {
+//    color: black;
+//    background-color: black;
+//  }
+//}

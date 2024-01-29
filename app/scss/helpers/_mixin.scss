@@ -1,0 +1,304 @@
+@mixin paragraph() {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+}
+
+
+@mixin h3($color: #545454) {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color;
+}
+
+@mixin h3-mobile($color: #ffffff){
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: $color;
+}
+
+@mixin h4($color: #545454) {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: $color;
+}
+
+@mixin h5(){
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+@mixin btn() {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+}
+
+@mixin our-head() {
+  @include h3();
+  width: 400px;
+  padding-top: 80px;
+  text-align: center;
+}
+
+@mixin our-card($color: #ffffff) {
+  width: 270px;
+  height: 435px;
+  background: $color;
+  border-radius: 9px;
+  display: grid;
+  justify-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  .our-friends__slides-img {
+    transition: 0.5s ease-in-out;
+  }
+  @media (hover: hover){
+    &:hover {
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+      transition: 0.3s ease-in-out;
+
+      img {
+        background-color: #fafafa;
+        border-radius: 9px;
+      }
+
+      .our-friends__slides-btn {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4;
+      }
+    }
+  }
+
+  &:active {
+    .our-friends__slides-btn {
+      background: #F1CDB3;
+      border: 2px solid #F1CDB3;
+    }
+  }
+}
+
+
+@mixin our-btn() {
+  @include btn;
+  width: 187px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+  @media (hover: hover){
+    &:hover {
+      background: #FDDCC4;
+      border: 2px solid #FDDCC4;
+    }
+  }
+
+  &:active {
+    background: #F1CDB3;
+    border: 2px solid #F1CDB3;
+  }
+}
+
+@mixin slides-nav($background) {
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  background: $background;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  align-self: center;
+  margin-bottom: 60px;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+  @media (hover: hover){
+    &:hover {
+      background-color: #FDDCC4;
+      border: 2px solid #FDDCC4;
+    }
+  }
+
+  &:active {
+    background-color: #F1CDB3;
+    border: 2px solid #F1CDB3;
+  }
+}
+
+@mixin slides-count() {
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  align-self: center;
+  margin-bottom: 50px;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+  @media (hover: hover){  &:hover {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }}
+
+
+}
+
+@mixin footer-hover() {
+  @media (hover: hover){
+    &:hover {
+      &::after {
+        transform: scale(1.1);
+      }
+
+      color: #FDDCC4;;
+    }
+  }
+  }
+
+
+@mixin grid-center() {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+@mixin btn-hov-active() {
+  @media (hover: hover){
+    &:hover {
+      background: #FDDCC4;
+    }
+  }
+
+  &:active {
+    background: #F1CDB3;
+  }
+}
+
+@mixin transition($speed: 0.4s){
+  transition: $speed all ease-in;
+}
+
+$sliderJS1170px: 1170px;
+$small: 320px;
+$large: 1070px;
+$accuracy-tablet: 769px;
+$slider: 1279px;
+$friend-mobile: 755px;
+$header-footer: 767px;
+$our-friends: 600px;
+$slider-friends: 680px;
+$not-only-bg: 450px;
+$mobile: 380px;
+$mobileF: 321px;
+$popup768: 768px;
+$popup860: 860px;
+
+@mixin respond-to($media) {
+  @if $media == tablet {
+    @media only screen and (max-width: $large) {
+      @content;
+    }
+  }
+  @if $media == JSSLider {
+    @media only screen and (max-width: $sliderJS1170px) {
+      @content;
+    }
+  }
+  @if $media == not-tablet {
+    @media only screen and (min-width: $large) {
+      @content;
+    }
+  }
+  @if $media == mobile {
+    @media only screen and (max-width: $small) {
+      @content;
+    }
+  }
+  @if $media == tablet-accuracy {
+    @media only screen and (max-width: $accuracy-tablet) {
+      @content;
+    }
+  }
+  @if $media == tablet-slider {
+    @media only screen and (max-width: $slider) {
+      @content;
+    }
+  }
+  @if $media == friend-mobile {
+    @media only screen and (max-width: $friend-mobile) {
+      @content;
+    }
+  }
+  @if $media == header-footer {
+    @media only screen and (min-width: $header-footer) {
+      @content;
+    }
+  }
+  @if $media == header-footer-max {
+    @media only screen and (max-width: $header-footer) {
+      @content;
+    }
+  }
+  @if $media == help-and-our {
+    @media only screen and (max-width: $our-friends) {
+      @content;
+    }
+  }
+  @if $media == not-only-bg {
+    @media only screen and (max-width: $not-only-bg) {
+      @content;
+    }
+  }
+  @if $media == footer-br {
+    @media only screen and (min-width: $not-only-bg) {
+      @content;
+    }
+  }
+  @if $media == 320px {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+  @if $media == 320pxF {
+    @media only screen and (max-width: $mobileF) {
+      @content;
+    }
+  }
+  @if $media == slider-friends {
+    @media only screen and (max-width: $slider-friends) {
+      @content;
+    }
+  }
+  @if $media == popup768 {
+    @media only screen and (max-width: $popup768) {
+      @content;
+    }
+  }
+  @if $media == popup860 {
+    @media only screen and (max-width: $popup860) {
+      @content;
+    }
+  }
+}

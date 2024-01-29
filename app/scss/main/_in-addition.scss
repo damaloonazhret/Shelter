@@ -1,0 +1,151 @@
+.in-addition {
+    background: #f6f6f6;
+
+&__wrapper {
+    display: grid;
+    grid-template-columns: minmax(508px,679px) minmax(370px, 520px);
+    height: 462px;
+    transition: 1s;
+    @include respond-to(tablet) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        height: 783px;
+    }
+    @include respond-to(help-and-our){
+        grid-template-rows: 360px 180px;
+        grid-template-columns: 1fr;
+        height: 542px;
+    }
+
+}
+    &__img {
+        background-image: url(../assets/donate/dog.png);
+        background-repeat: no-repeat;
+        background-position: 82% 45%;
+        @include respond-to(tablet) {
+            grid-row: 2 / 3;
+            background-position: 50% 24%;
+        }
+        @include respond-to(help-and-our){
+            width: 280px;
+            background-size: 100%;
+            justify-self: center;
+        }
+        @include respond-to(320px){
+            background-size: 94%;
+            background-position: 50% 15%;
+        }
+    }
+    &__info {
+        display: grid;
+        grid-template-rows: 90px 17px 40px 72px;
+        gap: 20px;
+        justify-items: start;
+        align-items: center;
+        align-content: center;
+        padding-bottom: 22px;
+        width: 350px;
+        @include respond-to(tablet) {
+            justify-self: center;
+            margin-top: 78px;
+            margin-right: 13px;
+            width: 365px;
+        }
+        @include respond-to(help-and-our){
+            width: 100%;
+            justify-items: center;
+            margin-right: 0;
+            grid-template-rows: 55px 31px 37px 94px;
+            margin-top: 10px;
+            text-align: justify;
+            padding: 0 10px;
+        }
+    }
+    &__info-head {
+        font-family: "Georgia";
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        width: 318px;
+        transition: 1s;
+        @include respond-to(help-and-our){
+            font-size: 7vw;
+            text-align: center;
+            width: 100%;
+            align-self: center;
+            margin-top: -15px;
+        }
+        @include respond-to(320px){
+            font-size: 25px;
+            margin-top: 0;
+        }
+    }
+    &__info-subhead {
+        font-family: "Georgia";
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        @include respond-to(help-and-our) {
+            line-height: 160%;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        }
+    &__info-card {
+        @include h4;
+        background: #f1cdb3;
+        border-radius: 9px;
+        width: 349px;
+        height: 43px;
+        display: grid;
+        justify-content: end;
+        align-content: center;
+        padding-right: 15px;
+        position: relative;
+        transition: 0.3s ease-in-out;
+        transform: translateX(0);
+        &::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 10px;
+            background-image: url(../assets/donate/logo.svg);
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 23px;
+            @include respond-to(tablet){
+                left: 15px;
+            }
+        }
+        &:hover {
+            background: #FDDCC4;
+        }
+        &:active {
+            background: #F1CDB3;
+        }
+        @include respond-to(help-and-our){
+            width: 281px;
+            @include h5;
+        }
+    }
+    &__info-info {
+        font-family: "Arial";
+        font-style: italic;
+        font-size: 12px;
+        line-height: 18px;
+        color: #b2b2b2;
+        @include respond-to(help-and-our){
+            width: 100%;
+            font-size: 3.7vw;
+            line-height: 4.4vw;
+            padding-top: 28px;
+        }
+        @include respond-to(320px){
+            font-size: 12px;
+            line-height: 18px;
+            padding-top: 0;
+        }
+    }
+}
